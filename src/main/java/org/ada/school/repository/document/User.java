@@ -42,7 +42,6 @@ public class User
         email = userDto.getEmail();
         createdAt = new Date();
         roles = new ArrayList<>( Collections.singleton( RoleEnum.USER ) );
-        //TODO uncomment this line
         passwordHash = BCrypt.hashpw( userDto.getPassword(), BCrypt.gensalt() );
     }
 
@@ -86,7 +85,6 @@ public class User
         this.name = userDto.getName();
         this.lastName = userDto.getLastName();
         this.email = userDto.getEmail();
-        //TODO uncomment these lines
         if ( userDto.getPassword() != null )
         {
             this.passwordHash = BCrypt.hashpw( userDto.getPassword(), BCrypt.gensalt() );
